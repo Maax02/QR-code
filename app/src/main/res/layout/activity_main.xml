@@ -6,18 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:hint="Text"/>
+
     <Button
+        android:id="@+id/generateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Scan QRcode"
+        android:layout_below="@+id/editText"
         android:layout_centerInParent="true"
+        android:text="Generate" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/buttonScan"
+        android:layout_below="@+id/generateButton"
+        android:layout_centerInParent="true"
+        android:contentDescription="QRCODE" />
+
+    <Button
         android:id="@+id/buttonScan"
-        />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Scan QRcode" />
+
+    <Button
+        android:id="@+id/buttonBySquare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonScan"
+        android:layout_centerInParent="true"
+        android:text="Scan Pay By Square" />
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/buttonScan"
+        android:layout_below="@id/buttonBySquare"
         android:layout_centerHorizontal="true"
         android:id="@+id/radioGroupBeep"
         android:orientation="horizontal">
@@ -28,6 +59,7 @@
             android:id="@+id/beepOff"
             android:text="BeepOff"
             android:checked="true"/>
+
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,5 +68,22 @@
             android:layout_marginStart="25dp"/>
 
     </RadioGroup>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radioGroupBeep"
+        android:id="@+id/emailAddress"
+        android:text=""
+        android:hint="Email"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendMail"
+        android:layout_below="@id/emailAddress"
+        android:layout_centerInParent="true"
+        android:text="Send"/>
+
 
 </RelativeLayout>
