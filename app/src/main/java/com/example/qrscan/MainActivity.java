@@ -272,6 +272,9 @@ public class MainActivity extends AppCompatActivity {
         StringBuilder header = new StringBuilder();
         for(int i = 0; i < 16; i++) {
             header.append(almostDecodedData.charAt(i));
+            if(i+1 == 4 || i+1 == 8 || i+1 == 12) {
+                header.append("|");
+            }
         }
 
         //Skipping header (not decompressed by LZMA)
@@ -360,10 +363,13 @@ public class MainActivity extends AppCompatActivity {
                 "|Rozšírenie o adresu príjemcu (druhý riadok)|",
         };
 
+        String headerInfo = "|By square type| |Version| |Document type| |Reserved|\n";
+
         StringBuilder square = new StringBuilder();
         square.append("Header: ");
         square.append(header);
         square.append("\n");
+        square.append(headerInfo);
         square.append(appendixD[tabCount]);
         int paymentCount = 0;
 
